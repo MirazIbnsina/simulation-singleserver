@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulation Input</title>
+    <style>
+        /* Reset default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; /* Light gray background */
+            margin: 0px 10px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff; /* White background for container */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-ios .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-ios label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-ios input[type="number"],
+        .form-ios input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc; /* Light gray border */
+            border-radius: 5px;
+        }
+
+        .submit-button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            font-size: 18px;
+            background-color: #007aff; /* iOS blue */
+            color: #fff; /* White text */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        @media (max-width: 768px) {
+        .container {
+            padding: 15px;
+        }
+
+        .form-ios input[type="number"],
+        .form-ios input[type="text"] {
+            font-size: 14px;
+        }
+        .small-text {
+            font-size: 0.8rem; /* Small font size */
+            color: #666; /* Gray text color */
+            margin-top: 10px; /* Top margin */
+        }
+    </style>
+</head>
+<body>
+<form action="process.php" method="post" class="form-ios">
+    <div class="container">
+        <div class="header">
+            <h1>Input Simulation Data</h1>
+            <div class="small-text">
+                <p>For single server simulation | by Miraz-224</p>
+            </div>
+        </div>
+         <br><br>
+            <div class="form-group">
+                <label for="num_customers">Number of customers [number]:</label>
+                <input type="number" id="num_customers" name="num_customers" required>
+            </div>
+            <div class="form-group">
+                <label for="rv">Random variables for customers (space-separated as 0 5 32 3...):</label>
+                <input type="text" id="rv" name="rv" required>
+            </div>
+            <div class="form-group">
+                <label for="rv_st">Random variables for service times (space-separated 32 33 87...):</label>
+                <input type="text" id="rv_st" name="rv_st" required>
+            </div>
+    </div>
+
+    <div class="container">
+            <div class="form-group">
+                <label for="iat_intervals">IAT intervals (space-separated as 1 2 3 4..):</label>
+                <input type="text" id="iat_intervals" name="iat_intervals" required>
+            </div>
+            <div class="form-group">
+                <label for="iat_probs">IAT probabilities (space-separated as 0.125 0.125 0.125..):</label>
+                <input type="text" id="iat_probs" name="iat_probs" required>
+            </div>
+    </div>
+
+    <div class="container">
+            <div class="form-group">
+                <label for="st_intervals">Service Time intervals  (space-separated as 2 3 4 5..):</label>
+                <input type="text" id="st_intervals" name="st_intervals" required>
+            </div>
+            <div class="form-group">
+                <label for="st_probs">Service Time probabilities (space-separated as 0.30 0.20 0.10...):</label>
+                <input type="text" id="st_probs" name="st_probs" required>
+            </div>
+            <button type="submit" class="submit-button">Simulate</button>
+    </div>
+     </form>
+</body>
+</html>
