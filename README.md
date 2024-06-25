@@ -15,7 +15,7 @@ Check out the live demo [here](http://simulation.42web.io).
 
 2. **View Simulation Results:**
    - The results will be processed by `process.php`.
-   - Navigate to `simulation-results.php` to view the detailed simulation table and metrics.
+   - Some calculation to view the detailed simulation metrics a summary.
 
 ## Installation
 
